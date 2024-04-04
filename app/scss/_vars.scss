@@ -1,0 +1,84 @@
+$black: #252525;
+$black-transparent: rgba(37, 37, 37, 0.5);
+$accent: #E0BEA2;
+$accent-hover: #CCA88A;
+$grey: #F5F5F5;
+$shadow: 0px 5px 7px rgba(37, 37, 37, 0.15);
+
+$button-height: 50px;
+$input-height: 50px;
+
+$section-padding: 50px 0;
+
+$transition-duration: .3s;
+
+@mixin button-accent{
+  border: none;
+  padding: 16px 0;
+  background-color: $accent;
+  height: $button-height;
+  margin: 0 auto;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all $transition-duration;
+  &:hover{
+    box-shadow: $shadow;
+  }
+  &:focus{
+    background-color: $accent-hover;
+    box-shadow: none;
+  }
+}
+
+@mixin button-white{
+  border: 1px solid $black;
+  padding: 16px 0;
+  background-color: #fff;
+  max-width: 255px;
+  width: 100%;
+  height: $button-height;
+  margin: 0 auto;
+  color: $black;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $transition-duration;
+  img{
+    margin-right: 10px;
+  }
+  &:hover{
+    box-shadow: $shadow;
+  }
+  &:focus{
+    background-color: $grey;
+    box-shadow: none;
+  }
+}
+
+@mixin input{
+  height: $input-height;
+  border: 1px solid $black;
+  padding: 15px 10px 15px 20px;
+  outline: none;
+  cursor: pointer;
+  color: $black;
+  transition: all $transition-duration;
+  &::placeholder{
+    font-family: 'Raleway-ExtraLight';
+    font-size: 16px;
+    color: $black-transparent;
+  }
+  &:focus{
+    border: 1px solid $accent;
+  }
+}
+
+@mixin h2{
+  font-family: Raleway-ExtraLight;
+  font-size: 36px;
+  @media (max-width:740px){
+    font-size: 24px;
+  }
+}
